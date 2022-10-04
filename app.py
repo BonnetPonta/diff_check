@@ -1,7 +1,9 @@
 from difflib import HtmlDiff
-from os import getcwd
+from os import chdir, getcwd
+from os.path import abspath, dirname
 from webbrowser import open as web_open
 
+chdir(dirname(abspath(__file__)))
 with open("input/a.txt", "r", encoding="utf-8_sig") as f:
     fileA = f.readlines()
 with open("input/b.txt", "r", encoding="utf-8_sig") as f:
